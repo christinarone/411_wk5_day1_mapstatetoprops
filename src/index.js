@@ -1,8 +1,24 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { createRoot } from "react-dom/client";
+import { Provider } from "react-redux";
+// import store from "./store";
+import "./index.css";
+import * as ReactDOM from 'react-dom';
+
+import App from "./App";
+
+ReactDOM.render(
+<Provider store={store}>
+<React.StrictMode>
+    <App />
+</React.StrictMode>
+</Provider>
+
+,
+document.getElementById('root')
+);
+
 
 const root = createRoot(document.getElementById("root"));
 root.render(<App />);
